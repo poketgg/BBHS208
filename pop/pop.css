@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body{
+    margin: 0;
+    background-color: rgba(128, 128, 128, 0.13);
+}
+
+#main{
+    width: 500px;
+    height: 300px;;
+
+    margin: auto;
+    text-align: center;
+
+    margin-top: 300px;
+
+    background-color: white;
+    border-radius: 20px 20px 20px 20px;
+
+    box-shadow: 10px 8px 25px rgb(133, 133, 133);
+}
+
+/* 제목 */
+#title{
+    font-size: 30px;
+    padding-top: 30px;
+
+    font-family: 'Gothic A1', sans-serif;
+    font-weight: 400;
+}
+
+/* 과목 */
+#mooli, #yoonsa, #chinese, #japanese{
+    float: left;
+    /* cursor: pointer; */
+}
+
+#mooli > a, #yoonsa > a, #chinese > a, #japanese > a {
+    text-decoration-line : none;
+    color: white;
+
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 30px;
+
+    display: block;
+    padding-top: 65px;
+
+    height: 175px;
+}
+
+#mooli, #japanese{
+    width: 175px;
+    height: 175px;
+
+    background-color: rgb(17, 0, 255);
+    border-radius: 20px 20px 20px 20px;
+
+    box-shadow: 10px 8px 25px rgb(133, 133, 133);
+
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+#yoonsa, #chinese{
+    width: 175px;
+    height: 175px;
+
+    background-color: rgb(132, 0, 255);
+    border-radius: 20px 20px 20px 20px;
+
+    box-shadow: 10px 8px 25px rgb(133, 133, 133);
+
+    margin-top: 30px;
+    margin-left: 45px;
+}
+
+
+#mooli:active, #japanese:active{
+    box-shadow: 0px 0px 25px rgb(100, 100, 100) !important; 
+}
+
+#yoonsa:active, #chinese:active{
+    box-shadow: 0px 0px 25px rgb(100, 100, 100) !important; 
+}

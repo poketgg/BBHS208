@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[온클] 2-8</title>
+
+    <link rel="stylesheet" href="/ebsoc.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+</head>
+<body onload="javascript:window_onload()">
+    <div id="main">
+        <div class="container">
+            <i class="fas fa-spinner fa-10x fa-spin"></i>
+        </div>
+
+        <span id="span1">잠시후, EBS 온라인클래스 로그인 페이지로 이동합니다</span><br>
+        <span id="span2">로그인 후 창을 닫아, 원래 창으로 돌아와주세요.</soan>
+    </div>
+</body>
+
+<script>
+    function window_onload(){
+        setTimeout('go_url()', 2500)  // 2.5초후 go_url() 함수를 호출
+    }
+
+    function go_url(){
+        location.href="https://www.ebsoc.co.kr/login"  // 페이지 이동
+    }
+</script>
+</html>

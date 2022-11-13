@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+a { text-decoration:none }
+
+body{
+    margin : 0;
+    background-color: rgba(128, 128, 128, 0.13);
+}
+
+/*-----------------------헤더 CSS--------------------------*/
+#header {
+    background-color: white;
+    font-family: 'Gothic A1', sans-serif;
+
+    height: 80px;
+    text-align: center;
+
+    box-shadow: 0px 0px 10px rgb(133, 133, 133);
+}
+
+#header > #oc{
+    display: block;
+    padding-top: 10px;
+    font-weight: 800;
+    font-size: 30px;
+}
+
+#header > #bbhsoc{
+    display: block;
+    margin-top: -10px;
+
+    text-decoration: none;
+
+    font-weight: 600;
+    font-size: 15px;
+    color: black;
+
+}
+
+#header > a:hover{
+    color: orange !important;
+}
+
+/*----------------메인_주의사항, 로그인 CSS------------------*/
+#notice > span{
+    font-family: 'Hahmlet', serif;
+    font-weight: 700;
+
+    font-size: 20px;
+
+    display: block;
+    padding-left: 20px;
+
+    color: white;
+}
+
+#notice{
+    margin-top: 30px;
+
+    background-color: rgb(55, 0, 255);
+    border-radius: 20px 20px 20px 20px;
+
+    box-shadow: 10px 8px 25px rgb(133, 133, 133);
+
+    height: 100px;
+}
+
+/*----------------------------------------*/
+
+#login{
+    background-color:rgb(119, 0, 255);
+    color: white;
+
+    margin: auto;
+    margin-top: 30px;
+    
+    width: 200px;
+    height: 50px;
+
+    border-radius: 25px 25px 25px 25px;
+
+    box-shadow: 10px 8px 25px rgb(133, 133, 133);
+}
+
+#login > span{
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 25px;
+
+    font-weight: 400;
+
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#login > span:hover{
+    cursor: pointer;
+}
+
+#login:active{
+    box-shadow: 0px 0px 25px rgb(100, 100, 100) !important; 
+}
+
+/*----------------시간표_timetable CSS-----------------*/
+
+#main{
+    display: block;
+    margin: auto;
+    width: 600.5px;
+}
+
+#table{
+    display: block;
+    text-align: center;
+    margin-top: 40px;
+
+    font-size: 25px;
+
+    height: 620px;
+
+    background-color: white;
+    border-radius: 40px 40px 40px 40px;
+
+    box-shadow: 10px 8px 25px rgb(133, 133, 133);
+}
+
+th{
+    font-family: 'Hahmlet', serif;
+    font-weight: 700;
+
+    padding-left: 90px;
+}
+
+td{
+    padding-left: 90px;
+    font-weight: 600;
+}
+
+tr, td{
+    font-family: 'Gothic A1', sans-serif;
+}
+
+th, td, tr{
+    height: 70px;
+}
+
+#_1class, #_2class, #_3class, #_4class, #_5class, #_6class, #_7class{
+    text-decoration: none;
+    color: black;
+
+    text-align: center;
+}
+

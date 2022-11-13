@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ko-kr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="main.css">
+    <title>[온클] 2-8</title>
+</head>
+
+<script>
+    function openNEWTab(url){
+        var win = window.open(url, '_blank')
+        win_focus();
+    }
+</script>
+
+<body>
+    <div id="header">
+        <span id="oc">EBS 온라인클래스</span> <br>
+        <a href="https://ccn.ebsoc.co.kr/class/bbhs0208" id="bbhsoc">배방고등학교 2-8</a>
+    </div>
+    <div id="main">
+        <div id="notice">
+            <span style="padding-top: 20px;">* 과목을 클릭하면 온라인클래스 수강 페이지로 이동됩니다.</span>
+            <span>* 반드시 최초 로그인 후에 이동해야 정상적으로 수강 가능합니다.</span>
+        </div>
+        <div id="login">
+            <span onclick="openNEWTab('ebsoc.html')">로그인</span>
+        </div>
+        <div class="wrap">
+            <table id="table">
+                <tr>
+                    <th> </th>
+                    <th>오늘의 수업</th>
+                    <th> </th>
+                </tr>
+                    <tr>
+                        <th>
+                            1교시
+                        </th>
+                        <td id="_1class"></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            2교시
+                        </th>
+                        <td id="_2class"></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            3교시
+                        </th>
+                        <td id="_3class"></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            4교시
+                        </th>
+                        <td id="_4class"></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            5교시
+                        </th>
+                        <td id="_5class"></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            6교시
+                        </th>
+                        <td id="_6class"></td>
+                    </tr>
+                    <tr>
+                        <th>
+                            7교시
+                        </th>
+                        <td id="_7class"></td>
+                    </tr>
+            </table>
+
+            <!-- 물리 / 윤사 -->
+            <div id="pop_info_1" class="pop_wrap" style="display:none;">
+                <div class="pop_inner">
+                <p class="dsc">과목을 선택해주세요.</p>
+                <a style="text-decoration: none;">물리 I</a>
+                <a style="text-decoration: none;">윤리와 사상</a>
+                <button type="button" class="btn_close">닫기</button>
+                </div>
+            </div>
+
+            <!-- 일어 / 중어 -->
+            <div id="pop_info_2" class="pop_wrap" style="display:none;">
+                <div class="pop_inner">
+                <p class="dsc">팝업 안내문구 입니다222.</p>
+                <button type="button" class="btn_close">닫기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    let timetable = {
+            월요일: {
+                '1교시': '자율',
+                '2교시': '물리/윤사',
+                '3교시': '지과',
+                '4교시': '화학',
+                '5교시': '한문',
+                '6교시': '영어',
+                '7교시': '독서(안)',
+                
+            },
+            화요일: {
+                '1교시': '한문',
+                '2교시': '지과',
+                '3교시': '체육',
+                '4교시': '수학',
+                '5교시': '일어/중어',
+                '6교시': '독서(이)',
+                '7교시': '영어',
+            },
+            수요일: {
+                '1교시': '수학',
+                '2교시': '화학',
+                '3교시': '물리/윤사',
+                '4교시': '한문',
+                '5교시': '창체',
+                '6교시': '창체',
+                '7교시': '　'
+            },
+            목요일: {
+                '1교시': '수능/당일',
+                '2교시': '　',
+                '3교시': '　',
+                '4교시': '　',
+                '5교시': '　',
+                '6교시': '　',
+                '7교시': '　',
+            },
+            금요일: {
+                '1교시': '독서(이)',
+                '2교시': '생과',
+                '3교시': '영어',
+                '4교시': '일어/중어',
+                '5교시': '확통',
+                '6교시': '수학',
+                '7교시': '음악',
+
+            }
+        }
+
+    function showClock()
+        {
+            var currentDate=new Date();
+            var divClock=document.getElementById("divClock");
+            var apm=currentDate.getHours();
+            if(apm<=12)
+            {
+                apm="오전 ";
+                var msg = getTodayLabel()+ "\n" + apm +(currentDate.getHours())+": "
+            }
+            else
+            {
+                apm="오후 ";
+                var msg = getTodayLabel()+ "\n" + apm +(currentDate.getHours()-12)+": "
+            }
+            
+            msg += currentDate.getMinutes() + ": ";
+            msg += currentDate.getSeconds() + "";
+            
+            divClock.innerText=msg;
+            
+            setTimeout(showClock,1000);
+        }
+    
+    function getTodayLabel() {
+    
+        var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+        
+        var today = new Date().getDay();
+        var todayLabel = week[today];
+        
+        return todayLabel;
+    }
+
+    function showClock()
+    {
+        var currentDate=new Date();
+        var divClock=document.getElementById("divClock");
+        var apm=currentDate.getHours();
+        if(apm<=12)
+        {
+            apm="오전 ";
+            var msg = getTodayLabel()+ "\n" + apm +(currentDate.getHours())+": "
+        }
+        else
+        {
+            apm="오후 ";
+            var msg = getTodayLabel()+ "\n" + apm +(currentDate.getHours()-12)+": "
+        }
+        
+        msg += currentDate.getMinutes() + ": ";
+        msg += currentDate.getSeconds() + "";
+        
+        divClock.innerText=msg;
+        
+        setTimeout(showClock,1000);
+    }
+
+    function getTodayLabel() {
+    
+        var week = new Array('일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일');
+        
+        var today = new Date().getDay();
+        var todayLabel = week[today];
+        
+        return todayLabel;
+    }
+    
+    today_week=getTodayLabel()
+    if(today_week == '토요일' || today_week == '일요일') today_week = '주말';
+    /*============*/
+    let a = new Date().getHours();
+    let b  = new Date().getMinutes();
+
+
+    let _1class = document.getElementById("_1class");
+    let _2class = document.getElementById("_2class");
+    let _3class = document.getElementById("_3class");
+    let _4class = document.getElementById("_4class");
+    let _5class = document.getElementById("_5class");
+    let _6class = document.getElementById("_6class");
+    let _7class = document.getElementById("_7class");
+    let _8class = document.getElementById("_8class");
+
+    let zoom_location = {
+        '자율': 'https://ccn.ebsoc.co.kr/class/bbhs0208/course/29467',
+        '물리/윤사': 'pop/pop1.html',
+        '지과': 'https://ccn.ebsoc.co.kr/class/bbhs0208/course/30612',
+        '화학': 'https://ccn.ebsoc.co.kr/class/bbhs0208/course/30697',
+        '한문': 'https://ccn.ebsoc.co.kr/class/bbhs0208/course/29877',
+        '영어': 'https://ccn.ebsoc.co.kr/class/bbhs0208/course/30506',
+        '독서(이)': 'https://ccn.ebsoc.co.kr/class/bbhs0208/course/30570',
+        '독서(안)' : 'https://ccn.ebsoc.co.kr/class/bbhs0208/course/30139',
+        '체육': 'https://ccn.ebsoc.co.kr/class/bbhs0208/course/30080',
+        '수학': 'https://ccn.ebsoc.co.kr/class/bbhs0208/course/29492',
+        '일어/중어': 'pop/pop2.html',
+        '생과': 'error/noclass.html',
+        '확통': 'error/noclass.html',
+        '진로': 'error/noclass.html',
+    }
+    let _1a = document.createElement("a");
+    let _2a = document.createElement("a");
+    let _3a = document.createElement("a");
+    let _4a = document.createElement("a");
+    let _5a = document.createElement("a");
+    let _6a = document.createElement("a");
+    let _7a = document.createElement("a");
+    let _8a = document.createElement("a");
+
+    function add(today_week) {
+        if(today_week == '수요일') {
+            _1a.href = zoom_location[timetable[today_week]['1교시']];
+            _1a.innerHTML = timetable[today_week]['1교시'];
+            _2a.href = zoom_location[timetable[today_week]['2교시']];
+            _2a.innerHTML = timetable[today_week]['2교시'];
+            _3a.href = zoom_location[timetable[today_week]['3교시']];
+            _3a.innerHTML = timetable[today_week]['3교시'];
+            _4a.href = zoom_location[timetable[today_week]['4교시']];
+            _4a.innerHTML = timetable[today_week]['4교시'];
+            _5a.href = zoom_location[timetable[today_week]['5교시']];
+            _5a.innerHTML = timetable[today_week]['5교시'];
+            _6a.href = zoom_location[timetable[today_week]['6교시']];
+            _6a.innerHTML = timetable[today_week]['6교시'];
+            _1a.target = '_blank';
+            _2a.target = '_blank';
+            _3a.target = '_blank';
+            _4a.target = '_blank';
+            _5a.target = '_blank';
+            _6a.target = '_blank';
+            _1class.appendChild(_1a);
+            _2class.appendChild(_2a);
+            _3class.appendChild(_3a);
+            _4class.appendChild(_4a);
+            _5class.appendChild(_5a);
+            _6class.appendChild(_6a);
+        } else {
+            _1a.href = zoom_location[timetable[today_week]['1교시']];
+            _1a.innerHTML = timetable[today_week]['1교시'];
+            _2a.href = zoom_location[timetable[today_week]['2교시']];
+            _2a.innerHTML = timetable[today_week]['2교시'];
+            _3a.href = zoom_location[timetable[today_week]['3교시']];
+            _3a.innerHTML = timetable[today_week]['3교시'];
+            _4a.href = zoom_location[timetable[today_week]['4교시']];
+            _4a.innerHTML = timetable[today_week]['4교시'];
+            _5a.href = zoom_location[timetable[today_week]['5교시']];
+            _5a.innerHTML = timetable[today_week]['5교시'];
+            _6a.href = zoom_location[timetable[today_week]['6교시']];
+            _6a.innerHTML = timetable[today_week]['6교시'];
+            _7a.href = zoom_location[timetable[today_week]['7교시']];
+            _7a.innerHTML = timetable[today_week]['7교시'];
+            _8a.href = zoom_location[timetable[today_week]['　']];
+            _8a.innerHTML = timetable[today_week]['　'];
+            _1a.target = '_blank';
+            _2a.target = '_blank';
+            _3a.target = '_blank';
+            _4a.target = '_blank';
+            _5a.target = '_blank';
+            _6a.target = '_blank';
+            _7a.target = '_blank';
+            _8a.target = '_blank';
+            _1class.appendChild(_1a);
+            _2class.appendChild(_2a);
+            _3class.appendChild(_3a);
+            _4class.appendChild(_4a);
+            _5class.appendChild(_5a);
+            _6class.appendChild(_6a);
+            _7class.appendChild(_7a);
+            _8class.appendChild(_8a);
+        }
+    }
+
+    if(today_week == '월요일') {
+        add(today_week);
+    } else if(today_week == '화요일') {
+        add(today_week);
+    } else if(today_week == '수요일') {
+        add(today_week);
+    } else if(today_week == '목요일') {
+        add(today_week);
+    } else if(today_week == '금요일') {
+        add(today_week);
+    } else if(today_week == '주말') {
+        add(today_week);
+    }
+</script>
+
+<!-- 여기까지 시간표 JS -->
+<!-- 여기부터 팝업 JS -->
+
+<script>
+    var target = document.querySelectorAll('.btn_open');
+    var btnPopClose = document.querySelectorAll('.pop_wrap .btn_close');
+    var targetID;
+
+    // 팝업 열기
+    for(var i = 0; i < target.length; i++){
+    target[i].addEventListener('click', function(){
+        targetID = this.getAttribute('href');
+        document.querySelector(targetID).style.display = 'block';
+    });
+    }
+
+    // 팝업 닫기
+    for(var j = 0; j < target.length; j++){
+    btnPopClose[j].addEventListener('click', function(){
+        this.parentNode.parentNode.style.display = 'none';
+    });
+    }
+</script>
+
+</html>
