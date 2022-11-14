@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 
 a { text-decoration:none }
 
@@ -11,7 +13,8 @@ body{
 /*-----------------------헤더 CSS--------------------------*/
 #header {
     background-color: white;
-    font-family: 'Gothic A1', sans-serif;
+    /* font-family: 'Gothic A1', sans-serif; */
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
 
     height: 80px;
     text-align: center;
@@ -21,8 +24,8 @@ body{
 
 #header > #oc{
     display: block;
-    padding-top: 10px;
-    font-weight: 800;
+    padding-top: 4px;
+    font-weight: 700;
     font-size: 30px;
 }
 
@@ -32,7 +35,7 @@ body{
 
     text-decoration: none;
 
-    font-weight: 600;
+    font-weight: 300;
     font-size: 15px;
     color: black;
 
@@ -44,8 +47,9 @@ body{
 
 /*----------------메인_주의사항, 로그인 CSS------------------*/
 #notice > span{
-    font-family: 'Hahmlet', serif;
-    font-weight: 700;
+    /* font-family: 'Hahmlet', serif; */
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 600;
 
     font-size: 20px;
 
@@ -84,14 +88,16 @@ body{
 }
 
 #login > span{
-    font-family: 'Gothic A1', sans-serif;
+    /* font-family: 'Gothic A1', sans-serif; */
+    /* font-family: 'Noto Sans KR', sans-serif; */
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     font-size: 25px;
 
-    font-weight: 400;
+    font-weight: 800;
 
     display: block;
     text-align: center;
-    padding-top: 10px;
+    padding-top: 5px;
 }
 
 #login > span:hover{
@@ -126,7 +132,8 @@ body{
 }
 
 th{
-    font-family: 'Hahmlet', serif;
+    /* font-family: 'Hahmlet', serif; */
+    font-family: 'Spoqa Han Sans Neo', 'sans-serif';
     font-weight: 700;
 
     padding-left: 90px;
@@ -134,11 +141,24 @@ th{
 
 td{
     padding-left: 90px;
-    font-weight: 600;
+    font-weight: 500;
+}
+
+td > a{
+    color: black;
+}
+
+td > a:hover{
+    color: orange;
+}
+
+td > a:active{
+    color: red;
 }
 
 tr, td{
-    font-family: 'Gothic A1', sans-serif;
+    /* font-family: 'Gothic A1', sans-serif; */
+    font-family: 'Spoqa Han Sans Neo', 'sans-serizf';
 }
 
 th, td, tr{
